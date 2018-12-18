@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MovLancer</string>
+    <string name="lbl_popular_movies">Most Popular Movies</string>
+
+    <string name="btn_retry_get_movies">Failed fetch movies.<u>Retry?</u></string>
+    <string name="lbl_max_result">Max result reached.</string>
+    <string name="lbl_trailer">Trailer</string>
+    <string name="lbl_overview">Overview</string>
+    <string name="lbl_reviews">Reviews (%1$d)</string>
+    <string name="lbl_casts">Casts</string>
+    <string name="lbl_format_movie_title">%1$s (%2$s)</string>
+    <string name="lbl_review_empty">0 Reviews</string>
+    <string name="lbl_trailer_empty">No available trailer/s.</string>
+    <string name="hint_search_movie">Search movie...</string>
+    <string name="btn_load_more">Load more</string>
+    <string name="btn_see_all_casts">See All Casts</string>
+    <string name="lbl_character">as %1$s</string>
+
+    <string-array name="arr_categories">
+        <item>Popular Movies</item>
+        <item>Top Rated Movies</item>
+        <item>Upcoming Movies</item>
+    </string-array>
+    <string name="title_activity_movie_details">MovieDetailsActivity</string>
+
+</resources>

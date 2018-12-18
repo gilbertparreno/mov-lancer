@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EmptyRecyclerView">
+        <attr name="emptyText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="enableExpand" format="boolean" />
+        <attr name="truncateAt" format="integer" />
+    </declare-styleable>
+</resources>

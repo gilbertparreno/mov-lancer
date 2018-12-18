@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@drawable/btn_bg_error"
+    android:foreground="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/ivStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/tvError"
+        android:src="@drawable/vec_refresh" />
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:drawablePadding="@dimen/mp_standard"
+        android:gravity="center_vertical"
+        android:padding="@dimen/mp_half"
+        android:text="@string/btn_retry_get_movies"
+        android:textSize="@dimen/text_xs"
+        android:textStyle="bold"
+        android:visibility="visible" />
+</RelativeLayout>
