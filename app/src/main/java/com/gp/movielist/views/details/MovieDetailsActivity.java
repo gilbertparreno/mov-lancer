@@ -21,6 +21,8 @@ import com.gp.movielist.api.service.ServiceFactory;
 import com.gp.movielist.base.BaseActivity;
 import com.gp.movielist.utils.EmptyRecyclerView;
 import com.gp.movielist.utils.RoundedCornersTransformation;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -101,26 +103,26 @@ public class MovieDetailsActivity extends BaseActivity<MovieDetailsContract.Pres
     ImageView ivMovieBanner = findViewById(R.id.ivMovieBanner);
     ((RatingBar) findViewById(R.id.rbMovie)).setRating(movie.getRating());
 
+    supportPostponeEnterTransition();
+    
     Picasso.get()
         .load(movie.getPosterPath())
         .placeholder(R.drawable.vec_placeholder_movie)
         .error(R.drawable.vec_placeholder_movie)
+        .networkPolicy(NetworkPolicy.OFFLINE)
         .transform(
             new RoundedCornersTransformation(15, 0, RoundedCornersTransformation.CornerType.ALL))
         .into(
-            new Target() {
+            ivMovie,
+            new Callback() {
               @Override
-              public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                startPostponedEnterTransition();
-                ivMovie.setImageBitmap(bitmap);
+              public void onSuccess() {
+                supportStartPostponedEnterTransition();
               }
 
               @Override
-              public void onBitmapFailed(Exception e, Drawable errorDrawable) {}
-
-              @Override
-              public void onPrepareLoad(Drawable placeHolderDrawable) {
-                postponeEnterTransition();
+              public void onError(Exception e) {
+                supportStartPostponedEnterTransition();
               }
             });
 

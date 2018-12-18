@@ -127,7 +127,12 @@ class CastAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
           v -> {
             showAllCasts = true;
             int oldSize = casts.size();
-            casts.addAll(raw);
+            int index = oldSize;
+            while (index < raw.size()) {
+              casts.add(raw.get(index));
+              index++;
+            }
+
             notifyItemRangeInserted(oldSize, casts.size());
           });
     }
